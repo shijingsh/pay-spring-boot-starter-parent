@@ -117,6 +117,21 @@ public interface PayServiceManager {
     String payBack(String detailsId, Map<String, String[]> parameterMap, InputStream is) throws IOException;
 
     /**
+     * 支付回调地址
+     * 方式二
+     *
+     * @param detailsId    商户列表id
+     * @param data 请求参数
+     * @return 支付是否成功
+     * @throws IOException IOException
+     *                     拦截器相关增加， 详情查看{@link com.egzosn.pay.common.api.PayService#addPayMessageInterceptor(PayMessageInterceptor)}
+     *                     <p>
+     *                     业务处理在对应的PayMessageHandler里面处理，在哪里设置PayMessageHandler，详情查看{@link com.egzosn.pay.common.api.PayService#setPayMessageHandler(com.egzosn.pay.common.api.PayMessageHandler)}
+     *                     </p>
+     *                     如果未设置 {@link com.egzosn.pay.common.api.PayMessageHandler} 那么会使用默认的 {@link com.egzosn.pay.common.api.DefaultPayMessageHandler}
+     */
+    String payBack(String detailsId,Map<String, Object> data) throws IOException;
+    /**
      * 查询
      *
      * @param order 订单的请求体
