@@ -51,6 +51,10 @@ public class CommonPaymentPlatformMerchantDetails extends BasePayConfigStorage i
     private String keyPrivateCertPwd;
 
     /**
+     * 应用公钥证书
+     */
+    private Object merchantCert;
+    /**
      * 证书存储类型
      */
     private CertStoreType certStoreType;
@@ -317,6 +321,14 @@ public class CommonPaymentPlatformMerchantDetails extends BasePayConfigStorage i
      */
     public void setKeyCert(InputStream keyCert) {
         this.keyCert = keyCert;
+    }
+
+    public Object getMerchantCert() {
+        return merchantCert;
+    }
+
+    public void setMerchantCert(Object merchantCert) {
+        this.merchantCert = merchantCert;
     }
 
     public InputStream getKeyPublicCertInputStream() throws IOException {

@@ -34,7 +34,7 @@ public class JdbcMerchantDetailsManager implements MerchantDetailsManager<Common
 
 
     private static final String TABLE = "merchant_details";
-    private static final List<String> FIELDS = Arrays.asList("appid", "pay_type", "mch_id", "cert_store_type", "key_private", "key_cert_pwd", "key_public", "key_cert", "notify_url", "return_url", "sign_type", "seller", "sub_app_id", "sub_mch_id", "input_charset", "is_test");
+    private static final List<String> FIELDS = Arrays.asList("appid", "pay_type", "mch_id", "cert_store_type", "key_private", "key_cert_pwd", "key_public", "key_cert", "notify_url", "return_url", "sign_type", "seller", "sub_app_id", "sub_mch_id", "input_charset", "is_test","merchant_cert");
     private static final String SELECT_FIELDS = SqlTools.join(FIELDS, SEPARATED);
     private static final String ID = "details_id";
 
@@ -164,6 +164,7 @@ public class JdbcMerchantDetailsManager implements MerchantDetailsManager<Common
                 details.setSubMchId(rs.getString(15));
                 details.setInputCharset(rs.getString(16));
                 details.setTest(rs.getBoolean(17));
+                details.setMerchantCert(rs.getString(18));
                 PayService payService = details.initService().getPayService();
                 InMemoryMerchantDetailsManager.setPayMessageConfigurer(payService, details, configurer);
                 return details;

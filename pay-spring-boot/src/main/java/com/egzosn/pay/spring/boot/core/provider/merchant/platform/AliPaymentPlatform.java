@@ -69,7 +69,17 @@ public class AliPaymentPlatform implements PaymentPlatform {
         configStorage.setTest(payConfigStorage.isTest());
         configStorage.setSignType(payConfigStorage.getSignType());
         if (payConfigStorage instanceof CommonPaymentPlatformMerchantDetails){
-            configStorage.setAppAuthToken(((CommonPaymentPlatformMerchantDetails)payConfigStorage).getSubAppId());
+            CommonPaymentPlatformMerchantDetails platformMerchantDetails = (CommonPaymentPlatformMerchantDetails)payConfigStorage;
+            configStorage.setAppAuthToken(platformMerchantDetails.getSubAppId());
+
+            //证书方式加密
+            configStorage.setCertSign(true);
+
+            //设置证书存储方式，这里为路径
+            configStorage.setCertStoreType(platformMerchantDetails.getCertStoreType()); //证书存储方式
+            configStorage.setMerchantCert(platformMerchantDetails.getMerchantCert());   //应用公钥证书文件路径，例如：d:/appCertPublicKey_2019051064521003.crt
+            configStorage.setAliPayCert(platformMerchantDetails.getKeyPublic());        //支付宝公钥证书文件路径，例如：d:/alipayCertPublicKey_RSA2.crt
+            configStorage.setAliPayRootCert(platformMerchantDetails.getKeyCert());      //支付宝根证书文件路径，例如：d:/alipayRootCert.crt
         }
 
         return new AliPayService(configStorage);
