@@ -4,12 +4,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>pay-spring-boot-starter-parent</artifactId>
-        <groupId>com.egzosn</groupId>
+        <groupId>com.github.shijingsh</groupId>
         <version>1.0.2</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.egzosn</groupId>
+    <groupId>com.github.shijingsh</groupId>
     <artifactId>pay-spring-boot-starter-demo</artifactId>
 
     <properties>
@@ -18,7 +18,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.egzosn</groupId>
+            <groupId>com.github.shijingsh</groupId>
             <artifactId>pay-spring-boot-starter</artifactId>
             <version>${project.version}</version>
         </dependency>
@@ -39,39 +39,39 @@
         <!--db-->
 
         <dependency>
-            <groupId>com.egzosn</groupId>
+            <groupId>com.github.shijingsh</groupId>
             <artifactId>pay-java-ali</artifactId>
             <version>${pay.version}</version>
         </dependency>
         <!-- 这里测试不引入是否报错或者触发-->
         <dependency>
-            <groupId>com.egzosn</groupId>
+            <groupId>com.github.shijingsh</groupId>
             <artifactId>pay-java-wx</artifactId>
             <version>${pay.version}</version>
         </dependency>
 
         <dependency>
-            <groupId>com.egzosn</groupId>
+            <groupId>com.github.shijingsh</groupId>
             <artifactId>pay-java-union</artifactId>
             <version>${pay.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.egzosn</groupId>
+            <groupId>com.github.shijingsh</groupId>
             <artifactId>pay-java-payoneer</artifactId>
             <version>${pay.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.egzosn</groupId>
+            <groupId>com.github.shijingsh</groupId>
             <artifactId>pay-java-paypal</artifactId>
             <version>${pay.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.egzosn</groupId>
+            <groupId>com.github.shijingsh</groupId>
             <artifactId>pay-java-wx-youdian</artifactId>
             <version>${pay.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.egzosn</groupId>
+            <groupId>com.github.shijingsh</groupId>
             <artifactId>pay-java-fuiou</artifactId>
             <version>${pay.version}</version>
         </dependency>
@@ -92,7 +92,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.egzosn.pay.spring.boot.demo.PayApplication</mainClass>
+                    <mainClass>com.github.shijingsh.pay.spring.boot.demo.PayApplication</mainClass>
                     <fork>false</fork>
                 </configuration>
                 <dependencies>
